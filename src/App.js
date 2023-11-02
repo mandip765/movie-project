@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Route, Routes } from 'react-router'
+import RootLayout from './components/RootLayout'
+import Homepage from './pages/Homepage'
+import Notfound from './pages/Notfound'
+import About from './pages/About'
+import Contacts from './pages/Contacts'
+import Crud from './components/Crud'
+import NewPage from './pages/NewPage'
+import UpdateCrud from './components/UpdateCrud'
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Routes>
+      <Route path='/' element={<RootLayout />} >
+        <Route index element={<Homepage />} />
+        <Route path='update-some/:id' element={<UpdateCrud />} />
+        <Route path='About' element={<About />} />
+        <Route path='NewPage' element={<NewPage />} />
+        <Route path='Contacts' element={<Contacts />} />
+        <Route path='Crud' element={<Crud />} />
+        <Route path='*' element={<Notfound />} />
+
+      </Route>
+
+    </Routes>
+  )
 }
 
-export default App;
+export default App
