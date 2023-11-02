@@ -18,11 +18,10 @@ const App = () => {
   return (
     <Routes>
       <Route path='/' element={<RootLayout />} >
-        <Route index element={<SampleHome />} />
+        {/* <Route index element={<SampleHome />} /> */}
         <Route path='/page/:cata/:pages' element={<PageRoute />} />
 
-        {/* 
-        <Route index element={<Homepage />} /> */}
+
 
 
 
