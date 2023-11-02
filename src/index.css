@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+
+min-width: 32%;
+/* Ensure a minimum width for consistency */

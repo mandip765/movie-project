@@ -1,14 +1,10 @@
 import React from 'react'
-import Display from './dash/Display'
-import Tech from './dash/Tech'
-import Info from './dash/Info'
+import CategoryMovie from './CategoryMovie'
 
 const Homepage = () => {
   return (
     <div>
-      <Display />
-      <Tech />
-      <Info />
+      <CategoryMovie />
     </div>
   )
 }

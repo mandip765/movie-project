@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { NavLink, redirect } from 'react-router-dom'
+import Search from '../pages/search/Search';
 
 const Header = () => {
 
@@ -10,10 +11,10 @@ const Header = () => {
   }
 
   return (
-    <div className='bg-black text-white flex justify-between px-4 py-3 items-baseline'>
+    <div className='bg-black text-white flex justify-between px-4 py-3 items-baseline sticky top-0 z-20'>
 
       <div className='space-y-2'>
-        <h1 className='text-2xl'><button>Web Tail</button></h1>
+        <NavLink to='/' replace><h1 className='text-2xl'>Web Tail</h1></NavLink>
         {show && <nav className='space-y-2  flex-col hidden sm:flex '>
           <NavLink className="hover:bg-white hover:text-black hover:px-4 hover:py-1">About</NavLink>
           <NavLink>Contact</NavLink>
@@ -28,12 +29,13 @@ const Header = () => {
       </div>
 
 
-      <nav className='space-x-6 sm:hidden'>
-        <NavLink to='/About' className="hover:bg-white hover:text-black hover:px-4 hover:py-1 hover:rounded-sm">About</NavLink >
-        <NavLink to='/Contacts' className="hover:bg-white hover:text-black hover:px-4 hover:py-1 hover:rounded-sm">Contacts</NavLink>
-        <NavLink to='/Crud' className="hover:bg-white hover:text-black hover:px-4 hover:py-1 hover:rounded-sm">Crud</NavLink>
-        <NavLink to='/NewPage' className="hover:bg-white hover:text-black hover:px-4 hover:py-1 hover:rounded-sm">NewPage</NavLink>
+      <nav className='space-x-6 sm:hidden flex items-baseline'>
+        <NavLink to='/movie/popular' className="hover:bg-white hover:text-black hover:px-4 hover:py-1">Popular</NavLink>
+        <NavLink to='/movie/top_rated' className="hover:bg-white hover:text-black hover:px-4 hover:py-1">TopRated</NavLink>
+        <NavLink to='/movie/upcoming' className="hover:bg-white hover:text-black hover:px-4 hover:py-1">Upcoming</NavLink>
+        <Search />
       </nav>
+
 
     </div>
   )
