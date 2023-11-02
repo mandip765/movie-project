@@ -22,6 +22,7 @@ const App = () => {
         <Route path='/page/:cata/:pages' element={<PageRoute />} />
 
 
+        <Route index element={<Homepage />} />
 
 
 
